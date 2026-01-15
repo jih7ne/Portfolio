@@ -78,13 +78,23 @@ export default function Portfolio() {
       link: "https://github.com/jih7ne/projet_web25",
       rating: 4
     },
+        {
+      id: 13,
+      title: "2D Multiplayer Video Game in Java",
+      year: "2025",
+      description: "Development of a 2D space shooter game using LibGDX framework. Implementation of game mechanics, graphics, and user interface.",
+      tech: ["JAVA", "LibGDX", "Sockets", "JAVAFx"],
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768519332/Gemini_Generated_Image_9rp0749rp0749rp0_wpqziq.png",
+      link: "https://github.com/jih7ne/JavaGame",
+      rating: 4
+    },
     {
       id: 6,
-      title: "Mass EMailing Application",
+      title: "Mass Emailing Application",
       year: "2025",
       description: "A simple web application that allows users to send bulk emails to multiple recipients with personalized content and verifies the existence of email addresses before sending.",
       tech: ["PHP", "PHP Mailer", "GMAIL SMTP"],
-      image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=400&h=600&fit=crop",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768518951/Gemini_Generated_Image_l2e27ml2e27ml2e2_cuaqfw.png",
       link: "https://github.com/jih7ne/Arrays-and-Files-manipulation",
       rating: 3
     },
@@ -118,13 +128,23 @@ export default function Portfolio() {
       link: "https://github.com/jih7ne/GestionEtudiants",
       rating: 2
     },
+     {
+      id: 20,
+      title: "Club's event management web app",
+      year: "2025",
+      description: "A full web application that allows users to manage events organized by different clubs in an educational institution, and allows users to register for these events.",
+      tech: ["PHP", "HTML", "CSS", "JavaScript", "MySQL", "TailwindCSS"],
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768518951/Gemini_Generated_Image_l2e27ml2e27ml2e2_cuaqfw.png",
+      link: "https://github.com/jih7ne/Arrays-and-Files-manipulation",
+      rating: 3
+    },
     {
       id: 9,
-      title: "Automaton manipulation CLI",
+      title: "Automata manipulation CLI",
       year: "2025",
       description: "A simple Command Line Interface (CLI) application for manipulating automata.",
       tech: ["C", "File Handling", "Automata Theory"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768491195/image_2026-01-15_163309521_evla0a.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768519683/Gemini_Generated_Image_oq0asfoq0asfoq0a_anc2ij.png",
       link: "https://github.com/jih7ne/ProjectTHL",
       rating: 3
     },
@@ -134,25 +154,16 @@ export default function Portfolio() {
       year: "2025",
       description: "Design of a Java API enabling dynamic interaction with MySQL, PostgreSQL, and SQL Server. Use of JUnit for testing",
       tech: ["JAVA", "JUnit", "JBDC", "MAVEN"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768491995/image_2026-01-15_164628518_h18wjr.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768520210/Gemini_Generated_Image_6pccx96pccx96pcc_xpl5cp.png",
       link: "https://github.com/jih7ne/api",
       rating: 4
     },
-    {
-      id: 13,
-      title: "2D Multiplayer Video Game in Java",
-      year: "2025",
-      description: "Development of a 2D space shooter game using LibGDX framework. Implementation of game mechanics, graphics, and user interface.",
-      tech: ["JAVA", "LibGDX", "Sockets", "JAVAFx"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768492292/image_2026-01-15_165125672_kfwyql.png",
-      link: "https://github.com/jih7ne/JavaGame",
-      rating: 4
-    },
+
     {
       id: 14,
-      title: "Terrins management system",
+      title: "Football field Booking Web Application",
       year: "2025",
-      description: "Development of a 2D space shooter game using LibGDX framework. Implementation of game mechanics, graphics, and user interface.",
+      description: "A web application that allows field managers / owners to manage their football fields and users to book these fields online based on availability and their desired prefrences with a history of reservations and invoices.",
       tech: ["JAVA", "LibGDX", "Sockets", "JAVAFx"],
       image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768492292/image_2026-01-15_165125672_kfwyql.png",
       link: "https://github.com/jih7ne/JavaGame",
