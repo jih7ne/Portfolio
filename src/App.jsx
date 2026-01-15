@@ -64,7 +64,7 @@ export default function Portfolio() {
       year: "2025",
       description: "A platform designed to simplify administrative procedures for ENSA Tétouan students. Students can easily and quickly request different school documents.",
       tech: ["PHP", "HTML", "JavaScript", "CSS", "MySQL", "TailwindCSS"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768514497/Gemini_Generated_Image_tyu1c1tyu1c1tyu1_atscin.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768517975/Gemini_Generated_Image_9juvzl9juvzl9juv_y21l1j.png",
       link: "https://github.com/jih7ne/GestionDemandesWeb",
       rating: 4
     },
@@ -74,7 +74,7 @@ export default function Portfolio() {
       year: "2025",
       description: "A responsive web portal for the Africa Cup of Nations (AFCON) tournament, providing users with up-to-date information on matches, teams, players, and statistics.",
       tech: ["HTML", "JavaScript", "CSS", "GitHub", "Bootstrap", "GitHub Pages"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768514876/Gemini_Generated_Image_9qejhx9qejhx9qej_twzj1c.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768518607/Gemini_Generated_Image_62lpto62lpto62lp_mqdi7q.png",
       link: "https://github.com/jih7ne/projet_web25",
       rating: 4
     },
