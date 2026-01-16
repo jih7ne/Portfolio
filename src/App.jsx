@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, FileText, ExternalLink, Mail, Star } from 'lucide-react';
 
 export default function Portfolio() {
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const profile = {
     name: "Jihane Chouhe",
@@ -10,10 +17,10 @@ export default function Portfolio() {
     title: "Computer Science Engineering Student",
     bio: "I am a computer science engineering student passionate about exploring new technologies to advance my career in IT. Additionally, I am highly engaged in extracurricular activities, actively contributing to various initiatives and events.",
     location: "Tétouan, Morocco",
-    email: "your.email@example.com",
+    email: "jihanechouhe@hotmail.com",
     linkedin: "https://www.linkedin.com/in/jihane-chouhe-09a29a319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     github: "https://github.com/jih7ne",
-    cv: "YOUR_GOOGLE_DRIVE_LINK_HERE",
+    cv: "https://drive.google.com/file/d/1s3y0_us0UsvOoLpSK1grqUZdKFFBN80c/view?usp=sharing",
     image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768516242/_MG_3729_bi6hfp.jpg"
   };
 
@@ -64,7 +71,7 @@ export default function Portfolio() {
       year: "2025",
       description: "A platform designed to simplify administrative procedures for ENSA Tétouan students. Students can easily and quickly request different school documents.",
       tech: ["PHP", "HTML", "JavaScript", "CSS", "MySQL", "TailwindCSS"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768517975/Gemini_Generated_Image_9juvzl9juvzl9juv_y21l1j.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768521847/Gemini_Generated_Image_ajvjanajvjanajvj_wuw4yj.png",
       link: "https://github.com/jih7ne/GestionDemandesWeb",
       rating: 4
     },
@@ -78,7 +85,7 @@ export default function Portfolio() {
       link: "https://github.com/jih7ne/projet_web25",
       rating: 4
     },
-        {
+    {
       id: 13,
       title: "2D Multiplayer Video Game in Java",
       year: "2025",
@@ -114,7 +121,7 @@ export default function Portfolio() {
       year: "2025",
       description: "Creation of a standardized environment with Laravel and MySQL under Docker, Version control management via GitHub\n\nAgile methodology with Jira",
       tech: ["Docker", "Firebase", "GitHub", "Jira", "Laravel"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768493230/image_2026-01-15_170703103_pt7h8r.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768520962/resized_1000x1500_no_stretch_lagtr1.png",
       link: "https://github.com/amosnyirenda123/e-ticket-backend",
       rating: 4
     },
@@ -124,11 +131,11 @@ export default function Portfolio() {
       year: "2024",
       description: "A simple Command Line Interface (CLI) application for managing student records, including adding, deleting, and displaying student information.",
       tech: ["C", "File Handling"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768490819/image_2026-01-15_162653356_audjw1.png",
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768521348/Gemini_Generated_Image_dedimldedimldedi_ldvfkp.png",
       link: "https://github.com/jih7ne/GestionEtudiants",
       rating: 2
     },
-     {
+    {
       id: 20,
       title: "Club's event management web app",
       year: "2025",
@@ -158,15 +165,14 @@ export default function Portfolio() {
       link: "https://github.com/jih7ne/api",
       rating: 4
     },
-
     {
       id: 14,
       title: "Football field Booking Web Application",
       year: "2025",
       description: "A web application that allows field managers / owners to manage their football fields and users to book these fields online based on availability and their desired prefrences with a history of reservations and invoices.",
-      tech: ["JAVA", "LibGDX", "Sockets", "JAVAFx"],
-      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768492292/image_2026-01-15_165125672_kfwyql.png",
-      link: "https://github.com/jih7ne/JavaGame",
+      tech: ["PHP", "HTML", "CSS", "JavaScript", "MySQL", "TailwindCSS"],
+      image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768520750/Gemini_Generated_Image_fy7ndhfy7ndhfy7n_fy88ch.png",
+      link: "https://github.com/jih7ne/reservation-terrains.git",
       rating: 4
     }
   ];
@@ -185,31 +191,38 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#14181c] text-[#9ab]">
+    <div className="min-h-screen bg-[#14181c] text-[#9ab] relative overflow-hidden">
+
       {/* Header */}
-      <header className="bg-[#1f2937] border-b border-[#456]">
+      <header className={`bg-[#1f2937]/95 backdrop-blur-sm border-b border-[#456] sticky top-0 z-50 transition-all duration-300 ${scrollY > 50 ? 'shadow-lg shadow-black/20' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-8">
-              <h1 className="text-xl font-bold text-white tracking-tight">
+              <h1 className="text-xl font-bold text-white tracking-tight transform hover:scale-105 transition-transform">
                 {profile.name}
               </h1>
               <nav className="hidden md:flex gap-6 text-sm">
-                <a href="#projects" className="hover:text-white transition">PROJECTS</a>
-                <a href="#about" className="hover:text-white transition">ABOUT</a>
+                <a href="#projects" className="hover:text-[#00c030] transition-colors relative group">
+                  PROJECTS
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00c030] group-hover:w-full transition-all duration-300" />
+                </a>
+                <a href="#about" className="hover:text-[#00c030] transition-colors relative group">
+                  ABOUT
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00c030] group-hover:w-full transition-all duration-300" />
+                </a>
               </nav>
             </div>
             <div className="flex items-center gap-3">
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" 
-                 className="text-[#9ab] hover:text-white transition">
+                 className="text-[#9ab] hover:text-[#00c030] transition-all hover:scale-110 transform">
                 <Linkedin size={18} />
               </a>
               <a href={profile.github} target="_blank" rel="noopener noreferrer"
-                 className="text-[#9ab] hover:text-white transition">
+                 className="text-[#9ab] hover:text-[#00c030] transition-all hover:scale-110 transform">
                 <Github size={18} />
               </a>
               <a href={`mailto:${profile.email}`}
-                 className="text-[#9ab] hover:text-white transition">
+                 className="text-[#9ab] hover:text-[#00c030] transition-all hover:scale-110 transform">
                 <Mail size={18} />
               </a>
             </div>
@@ -218,10 +231,10 @@ export default function Portfolio() {
       </header>
 
       {/* Profile Section */}
-      <section className="bg-[#1f2937] border-b border-[#456]" id="about">
+      <section className="bg-[#1f2937] border-b border-[#456] relative" id="about">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-32 h-32 rounded-full bg-[#2c3e50] flex items-center justify-center text-4xl font-bold text-white overflow-hidden">
+            <div className="w-32 h-32 rounded-full bg-[#2c3e50] flex items-center justify-center text-4xl font-bold text-white overflow-hidden hover:scale-105 transition-all duration-300 transform">
               {profile.image && profile.image !== "YOUR_CLOUDINARY_IMAGE_LINK_HERE" ? (
                 <img src={profile.image} alt={profile.name} className="w-full h-full object-cover" />
               ) : (
@@ -229,30 +242,48 @@ export default function Portfolio() {
               )}
             </div>
             <div className="flex-1">
-              <h2 className="text-4xl font-bold text-white mb-2">{profile.name}</h2>
+              <h2 className="text-4xl font-bold text-white mb-2 animate-fade-in">{profile.name}</h2>
               <p className="text-[#678] mb-4">@{profile.username}</p>
-              <p className="text-base leading-relaxed mb-6 max-w-2xl">{profile.bio}</p>
+              <p className="text-base leading-relaxed mb-4 max-w-2xl">{profile.bio}</p>
+              
+              {/* Contact Info */}
+              <div className="flex flex-wrap gap-4 mb-6 text-sm">
+                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 text-[#9ab] hover:text-[#ff8000] transition-colors">
+                  <Mail size={16} />
+                  {profile.email}
+                </a>
+                <a href={profile.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#9ab] hover:text-[#ff8000] transition-colors">
+                  <Github size={16} />
+                  {profile.github.split('/').pop()}
+                </a>
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#9ab] hover:text-[#ff8000] transition-colors">
+                  <Linkedin size={16} />
+                  LinkedIn
+                </a>
+              </div>
+
               <div className="flex flex-wrap gap-6 text-sm mb-6">
-                <div>
-                  <span className="text-white font-bold text-2xl">{stats.projects}</span>
+                <div className="group cursor-default">
+                  <span className="text-white font-bold text-2xl group-hover:text-[#00c030] transition-colors">{stats.projects}</span>
                   <span className="text-[#678] ml-2">Projects</span>
                 </div>
-                <div>
-                  <span className="text-white font-bold text-2xl">{stats.thisYear}</span>
+                <div className="group cursor-default">
+                  <span className="text-white font-bold text-2xl group-hover:text-[#00c030] transition-colors">{stats.thisYear}</span>
                   <span className="text-[#678] ml-2">This year</span>
                 </div>
-                <div>
-                  <span className="text-white font-bold text-2xl">{stats.technologies}</span>
+                <div className="group cursor-default">
+                  <span className="text-white font-bold text-2xl group-hover:text-[#00c030] transition-colors">{stats.technologies}</span>
                   <span className="text-[#678] ml-2">Technologies</span>
                 </div>
               </div>
               <a 
                 href={profile.cv}
-                download
-                className="inline-flex items-center gap-2 bg-[#00c030] text-white px-5 py-2 rounded text-sm font-semibold hover:bg-[#00e054] transition"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#00c030] text-white px-5 py-2 rounded text-sm font-semibold hover:bg-[#00e054] transition-all hover:scale-105 transform hover:shadow-lg hover:shadow-[#00c030]/50"
               >
                 <FileText size={16} />
-                Download CV
+                View CV
               </a>
             </div>
           </div>
@@ -260,17 +291,19 @@ export default function Portfolio() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="max-w-7xl mx-auto px-4 py-12">
+      <section className="max-w-7xl mx-auto px-4 py-12 relative z-10">
         <h3 className="text-sm uppercase tracking-wider text-[#678] font-semibold mb-8">
           Tech Stack
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {techStack.map((stack, idx) => (
-            <div key={idx} className="bg-[#1f2937] rounded p-6 border border-[#456]">
-              <h4 className="text-white font-bold mb-4 text-lg">{stack.category}</h4>
+            <div key={idx} 
+                 className="bg-[#1f2937] rounded p-6 border border-[#456] hover:border-[#ff8000] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff8000]/20 hover:-translate-y-1 transform group"
+                 style={{ animationDelay: `${idx * 100}ms` }}>
+              <h4 className="text-white font-bold mb-4 text-lg group-hover:text-[#ff8000] transition-colors">{stack.category}</h4>
               <div className="flex flex-wrap gap-2">
                 {stack.items.map((tech, i) => (
-                  <span key={i} className="bg-[#2c3440] text-[#9ab] px-3 py-1 rounded text-xs font-medium">
+                  <span key={i} className="bg-[#2c3440] text-[#9ab] px-3 py-1 rounded text-xs font-medium hover:bg-[#00c030] hover:text-white transition-all cursor-default transform hover:scale-110">
                     {tech}
                   </span>
                 ))}
@@ -281,7 +314,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Grid */}
-      <section className="max-w-7xl mx-auto px-4 py-12" id="projects">
+      <section className="max-w-7xl mx-auto px-4 py-12 relative z-10" id="projects">
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-sm uppercase tracking-wider text-[#678] font-semibold">
             Projects
@@ -289,19 +322,20 @@ export default function Portfolio() {
         </div>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          {projects.map(project => (
+          {projects.map((project, idx) => (
             <div 
               key={project.id}
-              className="relative group"
+              className="relative group animate-fade-in"
+              style={{ animationDelay: `${idx * 50}ms` }}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative aspect-[2/3] rounded-sm overflow-hidden bg-[#2c3440] shadow-lg">
+                <div className="relative aspect-[2/3] rounded-sm overflow-hidden bg-[#2c3440] shadow-lg hover:shadow-2xl hover:shadow-[#ff8000]/30 transition-all duration-300 hover:-translate-y-2 transform">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   
                   {/* Always visible title at bottom */}
@@ -313,19 +347,25 @@ export default function Portfolio() {
 
                   {/* Hover overlay with year and rating */}
                   {hoveredProject === project.id && (
-                    <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center p-3">
+                    <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center p-3 animate-fade-in">
                       <div className="flex gap-1 mb-2">
                         {[...Array(5)].map((_, i) => (
                           <Star 
                             key={i} 
                             size={12} 
-                            className={i < project.rating ? "fill-[#00c030] text-[#00c030]" : "text-[#456]"}
+                            className={`${i < project.rating ? "fill-[#00c030] text-[#00c030]" : "text-[#456]"} transition-all`}
+                            style={{ animationDelay: `${i * 50}ms` }}
                           />
                         ))}
                       </div>
                       <p className="text-[#9ab] text-xs">{project.year}</p>
                     </div>
                   )}
+                  
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  </div>
                 </div>
               </a>
             </div>
@@ -334,23 +374,25 @@ export default function Portfolio() {
       </section>
 
       {/* Project Details Section */}
-      <section className="max-w-7xl mx-auto px-4 py-12">
+      <section className="max-w-7xl mx-auto px-4 py-12 relative z-10">
         <h3 className="text-sm uppercase tracking-wider text-[#678] font-semibold mb-8">
           Project Details
         </h3>
         <div className="space-y-4">
-          {projects.map(project => (
-            <div key={project.id} className="bg-[#1f2937] rounded p-6 border border-[#456]">
+          {projects.map((project, idx) => (
+            <div key={project.id} 
+                 className="bg-[#1f2937] rounded p-6 border border-[#456] hover:border-[#ff8000] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff8000]/20 animate-fade-in group"
+                 style={{ animationDelay: `${idx * 50}ms` }}>
               <div className="flex flex-col md:flex-row gap-6">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-24 h-36 object-cover rounded shadow-lg"
+                  className="w-24 h-36 object-cover rounded shadow-lg group-hover:shadow-[#ff8000]/40 transition-all transform group-hover:scale-105"
                 />
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-1">{project.title}</h4>
+                      <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#ff8000] transition-colors">{project.title}</h4>
                       <p className="text-[#678] text-sm">{project.year}</p>
                     </div>
                     <div className="flex gap-1">
@@ -358,7 +400,7 @@ export default function Portfolio() {
                         <Star 
                           key={i} 
                           size={14} 
-                          className={i < project.rating ? "fill-[#00c030] text-[#00c030]" : "text-[#456]"}
+                          className={`${i < project.rating ? "fill-[#00c030] text-[#00c030]" : "text-[#456]"} transition-all hover:scale-125 transform`}
                         />
                       ))}
                     </div>
@@ -368,7 +410,7 @@ export default function Portfolio() {
                     {project.tech.map(tech => (
                       <span 
                         key={tech}
-                        className="bg-[#2c3440] text-[#9ab] px-3 py-1 rounded text-xs font-medium"
+                        className="bg-[#2c3440] text-[#9ab] px-3 py-1 rounded text-xs font-medium hover:bg-[#00c030] hover:text-white transition-all cursor-default transform hover:scale-110"
                       >
                         {tech}
                       </span>
@@ -378,10 +420,10 @@ export default function Portfolio() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#40bcf4] hover:text-white transition text-sm"
+                    className="inline-flex items-center gap-2 text-[#40bcf4] hover:text-[#ff8000] transition-all text-sm group/link"
                   >
                     View on GitHub
-                    <ExternalLink size={14} />
+                    <ExternalLink size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -391,11 +433,27 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#456] mt-20">
+      <footer className="border-t border-[#456] mt-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 py-8 text-center text-[#678] text-sm">
-          <p>© 2026 {profile.name}. Built with React & Tailwind CSS (and Love).</p>
+          <p className="hover:text-[#ff8000] transition-colors cursor-default">© 2026 {profile.name}. Built with React & Tailwind CSS (and Love).</p>
         </div>
       </footer>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 }
