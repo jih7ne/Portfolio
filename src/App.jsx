@@ -174,6 +174,7 @@ export default function Portfolio() {
       image: "https://res.cloudinary.com/djdip9ni4/image/upload/v1768520750/Gemini_Generated_Image_fy7ndhfy7ndhfy7n_fy88ch.png",
       link: "https://github.com/jih7ne/reservation-terrains.git",
       rating: 4
+
     }
   ];
 
